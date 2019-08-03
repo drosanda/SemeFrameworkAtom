@@ -19,3 +19,15 @@
   'Get Theme Content':
     'prefix': 'semegetthemecontent'
     'body': "\$this->getThemeContent();$0"
+
+  'Load CSS':
+    'prefix': 'semeloadcss'
+    'body': "\$this->loadCSS('${1:css_url}','${2:before_or_after}');$0"
+
+  'is Logged in':
+    'prefix': 'semelogincheck'
+    'body': "\$this->getLoggedIn('${1:identifier}');$0"
+
+  'Put JS Ready':
+    'prefix': 'semeputjsready'
+    'body': "\$this->putJsReady('${1:identifier}',\$__forward);$0"

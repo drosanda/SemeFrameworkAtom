@@ -42,4 +42,20 @@
 
   'Database Query Escape':
     'prefix': 'semedbescape'
-    'body': "\$this->db->esc('${1:data}');$0"
+    'body': "\$this->db->esc(\"\$${1:data}\");$0"
+
+  'Database Query Between Date':
+    'prefix': 'semedbbetweendate'
+    'body': "\$this->db->between(\"DATE('${1:column_name}')\",\"DATE('${2:condition1}')\",\"DATE('${3:condition2}')\");$0"
+
+  'Database Query Join':
+    'prefix': 'semedbjoin'
+    'body': "\$this->db->join(\$this->tbl${1:join_table_index},\$this->tbl${2:join_table_alias_index}_as,\"${3:join_table_column}\",\$this->tbl${4:main_table_alias_index}_as,\"${3:main_table_column}\",'');$0"
+
+  'Database Query Join Composite':
+    'prefix': 'semedbjoincomposite'
+    'body': "\$this->db->join_composite(\$this->tbl${1:join_table_index},\$this->tbl${2:join_table_alias_index}_as,\$this->__${3:join_composite_method}(),'');$0"
+
+  'Database Query Last ID':
+    'prefix': 'semelastid'
+    'body': "\$this->db->lastId();$0"
