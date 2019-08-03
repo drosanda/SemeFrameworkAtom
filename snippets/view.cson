@@ -18,8 +18,12 @@
 
   'Put Theme Content':
     'prefix': 'semeputthemecontent'
-    'body': "\$this->putThemeContent('\${1:item}',{$2:data});$0"
+    'body': "\$this->putThemeContent('\${1:item}',\$data);$0"
+
+  'Put JS Content':
+    'prefix': 'semeputjscontent'
+    'body': "\$this->putJsContent('\${1:item}',\$data);$0"
 
   'Render':
-    'prefix': 'semeputthemecontent'
+    'prefix': 'semerender'
     'body': "\$this->render();$0"

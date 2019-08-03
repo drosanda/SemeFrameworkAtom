@@ -1,0 +1,13 @@
+'.php':
+  # Template
+  'Set Title':
+    'prefix': 'semetemplatetitle'
+    'body': "\$this->getTitle();$0"
+
+  'Set Keyword':
+    'prefix': 'semetemplatedescription'
+    'body': "\$this->getKeyword();$0"
+
+  'Set Description':
+    'prefix': 'semetemplatedescription'
+    'body': "\$this->getDescription();$0"

@@ -2,7 +2,7 @@
   # Library Database
   'Database Query Select':
     'prefix': 'semedbselect'
-    'body': "\$this->db->select_as('${1:key}','${2:value}',0);$0"
+    'body': "\$this->db->select_as('${1:query}','${2:alias}',0);$0"
 
   'Database Query From':
     'prefix': 'semedbfrom'
@@ -25,21 +25,21 @@
     'body': "\$this->db->page('${1:page}','${2:pagesize}');$0"
 
   'Database Query Get':
-    'prefix': 'semesessget'
-    'body': "\$this->db->get('${1:type}','${2:debug_tf}');$0"
+    'prefix': 'semedbget'
+    'body': "\$this->db->get('object',${1:0});$0"
 
   'Database Query Get First':
     'prefix': 'semedbgetfirst'
-    'body': "\$this->db->get_first('${1:type}','${2:debug_tf}');$0"
+    'body': "\$this->db->get_first('object',${1:0});$0"
 
   'Database Query Executor':
     'prefix': 'semedbexec'
     'body': "\$this->db->exec('${1:ddl_query}');$0"
 
   'Database Query Raw':
-    'prefix': 'semedbexec'
+    'prefix': 'semedbraw'
     'body': "\$this->db->query('${1:ddl_query}');$0"
 
-  'Database Query Escap':
+  'Database Query Escape':
     'prefix': 'semedbescape'
     'body': "\$this->db->esc('${1:data}');$0"

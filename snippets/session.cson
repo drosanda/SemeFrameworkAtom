@@ -1,7 +1,7 @@
 '.php':
   # Library Session
   'Session Set':
-    'prefix': 'semesessset'
+    'prefix': 'semesessionset'
     'body': """
       \$array = array(
       	'${1:key}' => '${2:value}'
@@ -10,5 +10,5 @@
     """
 
   'Session Get':
-    'prefix': 'semesessget'
+    'prefix': 'semesessionget'
     'body': "\$this->getKey();$0"

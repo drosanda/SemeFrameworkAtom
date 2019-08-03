@@ -1,0 +1,36 @@
+'.php':
+  # Core
+  'Debug':
+    'prefix': 'semedebug'
+    'body': """
+    \$this->debug($data);$0
+    die();
+    """
+
+  'Load Library':
+    'prefix': 'semeloadlibrary'
+    'body': "\$this->lib('${1:path_to_library}');$0"
+
+  'Load Model':
+    'prefix': 'semeloadmodel'
+    'body': "\$this->lib('${1:path_to_model}','${2:alias}');$0"
+
+  'Create Constructor':
+    'prefix': 'semeconstructor'
+    'body': """
+    public function __construct(){
+  		parent::__construct();
+  	}
+    """
+
+  'Base Url':
+    'prefix': 'semebaseurl'
+    'body': "base_url('${1:url}');$0"
+
+  'Base Url Admin':
+    'prefix': 'semebaseurladmin'
+    'body': "base_url_admin('${1:url}');$0"
+
+  'Base Path':
+    'prefix': 'semebasepath'
+    'body': "SENEROOT"

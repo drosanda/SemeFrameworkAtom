@@ -1,0 +1,112 @@
+'.php':
+  # Model
+  'Seme Model Create':
+    'prefix': 'sememodelcreate'
+    'body': """
+class ${1:Table_Name}_Model extends SENE_Model{
+	var $tbl = '${2:table_name}';
+	var $tbl_as = '${3:table_alias}';
+
+	public function __construct(){
+		parent::__construct();
+		\$this->db->from(\$this->tbl,\$this->tbl_as);
+	}
+
+	public function trans_start(){
+		\$r = \$this->db->autocommit(0);
+		if(\$r) return \$this->db->begin();
+		return false;
+	}
+	public function trans_commit(){
+		return \$this->db->commit();
+	}
+	public function trans_rollback(){
+		return \$this->db->rollback();
+	}
+	public function trans_end(){
+		return \$this->db->autocommit(1);
+	}
+
+	public function set(\$di){
+		if(!is_array(\$di)) return 0;
+		return \$this->db->insert(\$this->tbl,\$di,0,0);
+	}
+	public function update(\$id,\$du){
+		if(!is_array(\$du)) return 0;
+    \$this->db->where("id",\$id);
+    return \$this->db->update(\$this->tbl,\$du,0);
+	}
+	public function del(\$id){
+    \$this->db->where("id",\$id);
+		return \$this->db->delete(\$this->tbl);
+	}
+
+	public function getAll(\$page=0,\$pagesize=10,\$sort_col="",\$sort_dir="ASC",\$keyword=""){
+		\$this->db->select('*');
+		\$this->db->from(\$this->tbl,\$this->tbl_as);
+		if(strlen(\$keyword)>0){
+			//\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",1,0);
+  		//\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",0,0);
+      //\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",0,1);
+    }
+		\$this->db->order_by($sortCol,$sortDir);
+    \$this->db->limit($page,$pagesize);
+		return \$this->db->get("object",0);
+	}
+	public function countAll(\$keyword=""){
+		\$this->db->select_as("COUNT(*)","total",0);
+		\$this->db->from($this->tbl,$this->tbl_as);
+		if(strlen(\$keyword)>0){
+			//\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",1,0);
+  		//\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",0,0);
+      //\$this->db->where("COLUMN_NAME",\$keyword,"OR","%like%",0,1);
+    }
+		\$d = \$this->db->get_first("object",0);
+		if(isset(\$d->total)) return \$d->total;
+		return 0;
+	}
+	public function getById(\$id){
+		\$this->db->where("id",\$id);
+		return \$this->db->get_first();
+	}
+}
+    """
+
+    'Seme Model Method Private':
+      'prefix': 'sememodelmethodprivate'
+      'body': """
+        private function __${1:privateMethod}(\$${2:param1},\$${3:param2}){
+          ${4:logic_here}
+        }
+      """
+
+    'Seme Model Method Public':
+      'prefix': 'sememodelmethodpublic'
+      'body': """
+        public function __${1:publicMethod}(\$${2:param1},\$${2:param1}){
+          ${3:logic_here}
+        }
+      """
+
+    'Seme Model Composite':
+      'prefix': 'sememodelcomposite'
+      'body': """
+        private function __joinTbl${1:TableAlias}(){
+          $composites = array();
+          $composites[] = \$this->db->composite_create("\$this->${2:table_alias}.${3:table_alias_col}","=","\$this->${4:table_alias2}.${4:table_alias_col2}");
+          return $composites;
+        }
+      """
+
+    'Seme Model Composite Create ':
+      'prefix': 'sememodelcompositecreate'
+      'body': """
+        $composites[] = \$this->db->composite_create("\$this->${1:table_alias}.${2:table_alias_col}","=","\$this->${3:table_alias2}.${4:table_alias_col2}");
+      """
+
+    'Seme Model Table Alias Create':
+      'prefix': 'sememodeltablealias'
+      'body': """
+        var $tbl${1:table_index} = '${2:table_name}';
+        var $tbl${1:table_index}_as = '${3:table_alias}';
+      """
