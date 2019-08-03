@@ -1,0 +1,14 @@
+'.php':
+  # Library Session
+  'Session Set':
+    'prefix': 'semesessset'
+    'body': """
+      \$array = array(
+      	'${1:key}' => '${2:value}'
+      );
+      \$this->setKey({3:data});$0
+    """
+
+  'Session Get':
+    'prefix': 'semesessget'
+    'body': "\$this->getKey();$0"

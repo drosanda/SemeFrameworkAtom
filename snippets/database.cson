@@ -1,0 +1,45 @@
+'.php':
+  # Library Session
+  'Database Query Select':
+    'prefix': 'semedbselect'
+    'body': "\$this->db->select_as('${1:key}','${2:value}',0);$0"
+
+  'Database Query From':
+    'prefix': 'semedbfrom'
+    'body': "\$this->db->from('${1:table}','${2:alias}',0);$0"
+
+  'Database Query Where':
+    'prefix': 'semedbwhere'
+    'body': "\$this->db->where_as('${1:key}','${2:value}','${3:and_or}','${4:operator}','${5:bracket_open}','${5:bracket_close}');$0"
+
+  'Database Query Order By':
+    'prefix': 'semedborder'
+    'body': "\$this->db->order_by('${1:key}','${2:value}');$0"
+
+  'Database Query Limit':
+    'prefix': 'semedborder'
+    'body': "\$this->db->limit('${1:key}','${2:value}');$0"
+
+  'Database Query Page':
+    'prefix': 'semedbpage'
+    'body': "\$this->db->page('${1:page}','${2:pagesize}');$0"
+
+  'Database Query Get':
+    'prefix': 'semesessget'
+    'body': "\$this->db->get('${1:type}','${2:debug_tf}');$0"
+
+  'Database Query Get First':
+    'prefix': 'semedbgetfirst'
+    'body': "\$this->db->get_first('${1:type}','${2:debug_tf}');$0"
+
+  'Database Query Executor':
+    'prefix': 'semedbexec'
+    'body': "\$this->db->exec('${1:ddl_query}');$0"
+
+  'Database Query Raw':
+    'prefix': 'semedbexec'
+    'body': "\$this->db->query('${1:ddl_query}');$0"
+
+  'Database Query Escap':
+    'prefix': 'semedbescape'
+    'body': "\$this->db->esc('${1:data}');$0"

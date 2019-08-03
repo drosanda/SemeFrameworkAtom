@@ -1,0 +1,25 @@
+'.php':
+  # Library Load View
+  'Set Title':
+    'prefix': 'semetitleset'
+    'body': "\$this->setTitle('\${1:item}');$0"
+
+  'Set Keyword':
+    'prefix': 'semekeywordset'
+    'body': "\$this->setDescription('\${1:item}');$0"
+
+  'Set Description':
+    'prefix': 'semedescriptionset'
+    'body': "\$this->setDescription('\${1:item}');$0"
+
+  'Load Layout':
+    'prefix': 'semelayoutload'
+    'body': "\$this->loadLayout('\${1:item}');$0"
+
+  'Put Theme Content':
+    'prefix': 'semeputthemecontent'
+    'body': "\$this->putThemeContent('\${1:item}',{$2:data});$0"
+
+  'Render':
+    'prefix': 'semeputthemecontent'
+    'body': "\$this->render();$0"
