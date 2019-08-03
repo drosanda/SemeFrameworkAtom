@@ -1,6 +1,6 @@
 {
   "name": "SemeFramework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Seme Framework v.3.x snippets for Atom Editor",
   "repository": "https://github.com/drosanda/SemeFrameworkAtom",
   "engines": {

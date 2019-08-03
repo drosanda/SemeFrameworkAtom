@@ -11,3 +11,11 @@
   'Set Description':
     'prefix': 'semetemplatedescription'
     'body': "\$this->getDescription();$0"
+
+  'Get Theme Element':
+    'prefix': 'semegetthemeelement'
+    'body': "\$this->getThemeElement(\"${1:path_to_theme_element}\",\$__forward);$0"
+
+  'Get Theme Content':
+    'prefix': 'semegetthemecontent'
+    'body': "\$this->getThemeContent();$0"

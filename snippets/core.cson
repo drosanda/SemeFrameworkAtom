@@ -34,3 +34,19 @@
   'Base Path':
     'prefix': 'semebasepath'
     'body': "SENEROOT"
+
+  'Direcotry Separator':
+    'prefix': 'semeds'
+    'body': "DIRECTORY_SEPARATOR"
+
+  'Input Post':
+    'prefix': 'semeinputpost'
+    'body': "\$this->input->post(\"${1:param_name}\");$0"
+
+  'Input Get':
+    'prefix': 'semeinputget'
+    'body': "\$this->input->get(\"${1:param_name}\");$0"
+
+  'Input Request':
+    'prefix': 'semeinputrequest'
+    'body': "\$this->input->request(\"${1:param_name}\");$0"

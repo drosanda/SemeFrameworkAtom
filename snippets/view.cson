@@ -2,27 +2,31 @@
   # Library Load View
   'Set Title':
     'prefix': 'semetitleset'
-    'body': "\$this->setTitle('\${1:item}');$0"
+    'body': "\$this->setTitle('\${1:title}');$0"
 
   'Set Keyword':
     'prefix': 'semekeywordset'
-    'body': "\$this->setDescription('\${1:item}');$0"
+    'body': "\$this->setDescription('\${1:keyword}');$0"
 
   'Set Description':
     'prefix': 'semedescriptionset'
-    'body': "\$this->setDescription('\${1:item}');$0"
+    'body': "\$this->setDescription('\${1:description}');$0"
 
   'Load Layout':
     'prefix': 'semelayoutload'
-    'body': "\$this->loadLayout('\${1:item}');$0"
+    'body': "\$this->loadLayout('\${1:path_to_layout}');$0"
 
   'Put Theme Content':
     'prefix': 'semeputthemecontent'
-    'body': "\$this->putThemeContent('\${1:item}',\$data);$0"
+    'body': "\$this->putThemeContent('\${1:path_to_view_content}',\$data);$0"
 
   'Put JS Content':
     'prefix': 'semeputjscontent'
-    'body': "\$this->putJsContent('\${1:item}',\$data);$0"
+    'body': "\$this->putJsContent('\${1:path_to_view_js}',\$data);$0"
+
+  'Put JS Footer':
+    'prefix': 'semeputjsfooter'
+    'body': "\$this->putJsFooter('\${1:path_to_view_js}',\$data);$0"
 
   'Render':
     'prefix': 'semerender'
