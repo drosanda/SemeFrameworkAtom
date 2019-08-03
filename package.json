@@ -1,10 +1,10 @@
 {
-  "name": "Seme Framework",
+  "name": "semeframework",
   "version": "0.0.1",
   "description": "Seme Framework v.3.x snippets for Atom Editor",
   "repository": "https://github.com/drosanda/seme-framework-atom",
   "engines": {
-    "atom": ">=1.38.0"
+    "atom": "*"
   },
   "license": "MIT"
 }
