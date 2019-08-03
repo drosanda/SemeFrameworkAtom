@@ -2,7 +2,7 @@
   "name": "Seme Framework",
   "version": "0.0.1",
   "description": "Seme Framework v.3.x snippets for Atom Editor",
-  "repository": "",
+  "repository": "https://github.com/drosanda/seme-framework-atom",
   "engines": {
     "atom": ">=0.174.0"
   }
