@@ -1,7 +1,7 @@
 '.php':
   # Controller
   'Seme Controller Create':
-    'prefix': 'semcontrollercreate'
+    'prefix': 'semecontrollercreate'
     'body': """
 class ${1:ControllerName} extends SENE_Controller{
 	public function __construct(){
@@ -15,7 +15,7 @@ class ${1:ControllerName} extends SENE_Controller{
     """
 
   'Seme Controller Method View':
-    'prefix': 'semcontrollermethodview'
+    'prefix': 'semecontrollermethodview'
     'body': """
     	public function ${1:method_name}(){
         \$data = array();
