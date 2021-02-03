@@ -1,30 +1,20 @@
 '.php':
   # Controller
-  'Seme Controller Create':
-    'prefix': 'semecontrollercreate'
-    'body': """
-class ${1:ControllerName} extends SENE_Controller{
+  'Seme Controller':
+    'prefix': 'semecontroller'
+    'body': '''
+<?php
+class ${1:ControllerName} extends ${2:SENE}_Controller{
 	public function __construct(){
 		parent::__construct();
 		\$this->setTheme('front');
 	}
 	public function index(){
-		echo 'Thank you for using Seme Framework';
+    \$data = array();
+    \$this->setTitle('${3:PageTitle}');
+		\$this->putThemeContent('${4:home/home}',$data);
+		\$this->loadLayout('${5:col-1}');
+		\$this->render();
 	}
 }
-    """
-
-  'Seme Controller Method View':
-    'prefix': 'semecontrollermethodview'
-    'body': """
-    	public function ${1:method_name}(){
-        \$data = array();
-    		\$this->setTitle("${2:site_title}");
-    		\$this->setDescription("${3:site_description}");
-    		\$this->setKeyword("${4:site_title}");
-
-    		\$this->putThemeContent('${5:theme_content}',\$data);
-    		\$this->loadLayout('${6:layout_name}',\$data);
-    		\$this->render();
-    	}
-    """
+'''

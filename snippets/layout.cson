@@ -1,0 +1,121 @@
+'.php':
+  'Seme Layout':
+    'prefix': 'semelayout'
+    'body': '''
+<!DOCTYPE html>
+<html lang="${1:en}">
+<?php \$this->getThemeElement("page/html/head",\$__forward); ?>
+<?php \$this->getBodyBefore(); ?>
+<body class="">
+  <?php \$this->getThemeElement("page/html/topbar",\$__forward);?>
+  <?php \$this->getThemeElement("page/html/menu",\$__forward);?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"><?php \$this->getThemeElement("page/html/breadcrumb",\$__forward)?></div>
+    </div>
+    <div class="row">
+      <!-- main content-->
+      <div class="col-md-12">
+        <?php \$this->getThemeContent(); ?>
+      </div>
+      <!-- main content-->
+    </div>
+  </div>
+
+  <!--footer-->
+  <?php \$this->getThemeElement('page/html/footer',\$__forward); ?>
+  <!--end footer-->
+
+  <!-- load JS in footer-->
+  <?php \$this->getJsFooter(); ?>
+  <!-- End load JS in footer-->
+
+  <!-- default JS Script-->
+  <script>
+  $(document).ready(function(e){
+    <?php \$this->getJsReady(); ?>
+    <?php \$this->getJsContent(); ?>
+  });
+  </script>
+  <!-- default JS Script-->
+</body>
+</html>
+'''
+
+  'Seme Layout':
+    'prefix': 'semehead'
+    'body': '''
+<head>
+  <!-- Basic page needs -->
+  <meta charset="utf-8">
+  <!-- Mobile specific metas  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <![endif]-->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title><?=\$this->getTitle(); ?></title>
+  <meta name="language" content="id" />
+  <meta name="description" content="<?=\$this->getDescription(); ?>"/>
+  <meta name="keyword" content="<?=\$this->getKeyword(); ?>"/>
+  <meta name="author" content="<?=\$this->getAuthor(); ?>">
+  <link rel="icon" href="<?=\$this->getIcon(); ?>" type="image/x-icon" />
+  <link rel="shortcut icon" href="<?=\$this->getShortcutIcon(); ?>" type="image/x-icon" />
+  <meta name="robots" content="<?=\$this->getRobots(); ?>" />
+
+  <!-- icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<?=\$this->cdn_url()?>skin/front/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?=\$this->cdn_url()?>skin/front/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?=\$this->cdn_url()?>skin/front/icon/favicon-16x16.png">
+  <link rel="mask-icon" href="<?=\$this->cdn_url()?>skin/front/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="<?=\$this->cdn_url()?>skin/front/icon/favicon.ico">
+  <meta name="google-site-verification" content="${1:GOOGLE_SITE_VERIF}" />
+  <meta name="msvalidate.01" content="${2:MS_SET_VERIF}" />
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="<?=\$this->cdn_url()?>skin/front/icon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- prefetch -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//connect.facebook.net" />
+  <link rel="dns-prefetch" href="//www.facebook.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+  <!-- geo -->
+  <meta name="geo.region" content="ID-JB" />
+  <meta name="geo.placename" content="Bandung" />
+  <meta name="geo.position" content="-6.9292717;107.5878238" />
+  <meta name="ICBM" content="-6.9292717, 107.5878238" />
+
+  <!-- other meta -->
+  <meta property="fb:app_id" content="" />
+  <meta property="og:image" content="" />
+
+  <?php \$this->getAdditionalBefore(); ?>
+  <?php \$this->getAdditional(); ?>
+  <?php \$this->getAdditionalAfter(); ?>
+
+  <!-- google meta tag -->
+  <!-- end google meta tag-->
+
+  <!--facebook analytics-->
+  <!--end facebook analytics-->
+
+  <!-- search term -->
+  <script type="application/ld+json">
+  {
+     "@context": "https://schema.org",
+     "@type": "WebSite",
+     "url": "<?=base_url()?>",
+     "potentialAction": {
+       "@type": "SearchAction",
+       "target": "<?=base_url()?>produk/?keyword={search_term_string}",
+       "query-input": "required name=search_term_string"
+     }
+  }
+  </script>
+  <!-- end search term -->
+</head>
+'''

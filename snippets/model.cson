@@ -1,8 +1,8 @@
 '.php':
-  # Model
-  'Seme Model Create':
-    'prefix': 'sememodelcreate'
-    'body': """
+  'Seme Model':
+    'prefix': 'sememodel'
+    'body': '''
+<?php
 class ${1:Table_Name}_Model extends SENE_Model{
 	var $tbl = '${2:table_name}';
 	var $tbl_as = '${3:table_alias}';
@@ -70,43 +70,43 @@ class ${1:Table_Name}_Model extends SENE_Model{
 		return \$this->db->get_first();
 	}
 }
-    """
+'''
 
-    'Seme Model Method Private':
-      'prefix': 'sememodelmethodprivate'
-      'body': """
-        private function __${1:privateMethod}(\$${2:param1},\$${3:param2}){
-          ${4:logic_here}
-        }
-      """
+'Seme Model Method Private':
+  'prefix': 'sememodelprivate'
+  'body': '''
+    private function __${1:privateMethod}(\$${2:param1},\$${3:param2}){
+      ${4:logic_here}
+    }
+'''
 
-    'Seme Model Method Public':
-      'prefix': 'sememodelmethodpublic'
-      'body': """
-        public function __${1:publicMethod}(\$${2:param1},\$${2:param1}){
-          ${3:logic_here}
-        }
-      """
+'Seme Model Method Public':
+  'prefix': 'sememodelmethodpublic'
+  'body': '''
+    public function __${1:publicMethod}(\$${2:param1},\$${2:param1}){
+      ${3:logic_here}
+    }
+'''
 
-    'Seme Model Composite':
-      'prefix': 'sememodelcomposite'
-      'body': """
-        private function __joinTbl${1:TableAlias}(){
-          $composites = array();
-          $composites[] = \$this->db->composite_create("\$this->${2:table_alias}.${3:table_alias_col}","=","\$this->${4:table_alias2}.${4:table_alias_col2}");
-          return $composites;
-        }
-      """
+'Seme Model Composite':
+  'prefix': 'sememodelcomposite'
+  'body': """
+    private function __joinTbl${1:TableAlias}(){
+      $composites = array();
+      $composites[] = \$this->db->composite_create("\$this->${2:table_alias}.${3:table_alias_col}","=","\$this->${4:table_alias2}.${4:table_alias_col2}");
+      return $composites;
+    }
+  """
 
-    'Seme Model Composite Create ':
-      'prefix': 'sememodelcompositecreate'
-      'body': """
-        $composites[] = \$this->db->composite_create("\$this->${1:table_alias}.${2:table_alias_col}","=","\$this->${3:table_alias2}.${4:table_alias_col2}");
-      """
+'Seme Model Composite Create ':
+  'prefix': 'sememodelcompositecreate'
+  'body': """
+    $composites[] = \$this->db->composite_create("\$this->${1:table_alias}.${2:table_alias_col}","=","\$this->${3:table_alias2}.${4:table_alias_col2}");
+  """
 
-    'Seme Model Table Alias Create':
-      'prefix': 'sememodeltablealias'
-      'body': """
-        var $tbl${1:table_index} = '${2:table_name}';
-        var $tbl${1:table_index}_as = '${3:table_alias}';
-      """
+'Seme Model Table Alias Create':
+  'prefix': 'sememodeltablealias'
+  'body': """
+    var $tbl${1:table_index} = '${2:table_name}';
+    var $tbl${1:table_index}_as = '${3:table_alias}';
+  """
