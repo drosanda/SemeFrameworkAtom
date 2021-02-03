@@ -42,8 +42,8 @@
 </html>
 '''
 
-  'Seme Layout':
-    'prefix': 'semehead'
+  'Seme Head Layout':
+    'prefix': 'semeheadlayout'
     'body': '''
 <head>
   <!-- Basic page needs -->
